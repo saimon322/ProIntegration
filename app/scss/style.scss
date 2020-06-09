@@ -1,0 +1,25 @@
+// Mixins
+@import "_mixins/breakpoint";
+@import "_mixins/font-face";
+
+// Global styles
+@import "fonts";
+@import "libs";
+@import "vars";
+@import "normalize";
+@import "my-style";
+
+// Header and footer
+@import "header";
+@import "footer";
+
+// Blocks
+@import "blocks/modals";
+
+// Pages
+@import "pages/about";
+@import "pages/contacts";
+@import "pages/main";
+@import "pages/portfolio";
+@import "pages/project";
+@import "pages/textpage";

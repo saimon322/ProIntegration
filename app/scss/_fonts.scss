@@ -1,0 +1,13 @@
+@import "_mixins/font-face";
+
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-Light", 300);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-Regular", 400);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-SemiBold", 600);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-Bold", 700);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-ExtraBold", 800);
+
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-LightItalic", 300, italic);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-Italic", 400, italic);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-SemiBoldItalic", 600, italic);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-BoldItalic", 700, italic);
+@include font-face("OpenSans", "../fonts/OpenSans/OpenSans-ExtraBoldItalic", 800, italic);
