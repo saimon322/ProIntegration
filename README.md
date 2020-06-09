@@ -1,5 +1,5 @@
 # ProIntegration
-To build project locally clone/download it, then start command line and type:  
+To build project locally clone/download it to your local machine, then start command line and type:  
 ```
 $ npm i  
 $ gulp  
