@@ -83,6 +83,14 @@ $(document).ready(function () {
   // IE fixes
   objectFitImages();
 
+  // 100 vh fix
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  window.addEventListener('resize', () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
   /**
    * Replace all SVG images with inline SVG
    */

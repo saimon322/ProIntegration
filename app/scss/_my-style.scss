@@ -126,5 +126,18 @@ input {
 
 .index-page {
   height: 100vh;
-
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    margin: 10px auto;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+  }
 }
