@@ -83,7 +83,7 @@ input {
     padding: 0 20px;
     font-size: 12px; line-height: 1.5;
   }
-  &:focus {border-color: $blue;} 
+  &:focus {border-color: $green;} 
 
   // Safari fix
   &:-webkit-autofill,
@@ -126,6 +126,8 @@ input {
 
 .index-page {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  padding-top: 124px;
   .container {
     height: 100%;
     display: flex;
