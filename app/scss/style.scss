@@ -13,13 +13,10 @@
 @import "header";
 @import "footer";
 
-// Blocks
-@import "blocks/modals";
-
 // Pages
+@import "pages/main";
 @import "pages/about";
 @import "pages/contacts";
-@import "pages/main";
-@import "pages/portfolio";
-@import "pages/project";
+@import "pages/products";
+@import "pages/solutions";
 @import "pages/textpage";

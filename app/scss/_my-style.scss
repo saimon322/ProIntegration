@@ -13,7 +13,6 @@ main {
 }
 
 a {
-  color: #000;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -29,7 +28,8 @@ a {
   @include media-only(sm) {max-width: 540px;}
   @include media-only(md) {max-width: 704px;}
   @include media-only(lg) {max-width: 960px;}
-  @include media-up(xl) {padding: 0 50px;}
+  @include media-up(xl) {max-width: 1100px;}
+  @include media-up(xxl) {max-width: 1780px;}
 }
 
 .btn {
@@ -113,7 +113,7 @@ input {
   to {opacity: 0;}
 }
 
-@keyframes showTopMenu {
+@keyframes fixedHeader {
   0% {
     opacity: 0;
     top: -70px;
