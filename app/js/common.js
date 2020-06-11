@@ -53,22 +53,24 @@ $(document).ready(function () {
 
   // Hamburger
   $(".hamburger").click(function(e){
-    $(".hamburger, .h-logo").toggleClass("active");
-    $(".m-panel").toggleClass("active").stop().slideToggle();
-    $(".m-dropdown").removeClass("active");
-    $(".m-dropdown .dropdown-menu").stop().slideUp();
-    $('body,html').stop().animate({scrollTop: 0}, 300);
-    if ($(".m-panel.active").length) 
+    $(".hamburger, .mobile-panel").toggleClass("active");
+    $("#overlay").fadeToggle();
+    if ($(".mobile-panel.active").length) {
+      $.fn.fullpage.setAllowScrolling(false);
       $("body").addClass("overflow");
-    else 
+    }
+    else {
+      $.fn.fullpage.setAllowScrolling(true);
       $("body").removeClass("overflow");
+    }
   });
 
-  // Закрытие dropdown при клике вне меню
-  $(document).mouseup(function(e) {
-    if (!$("header").is(e.target) && $("header").has(e.target).length === 0) {
-      $("header").removeClass("active");
-    }
+  // Overlay
+  $("#overlay").click(function(){
+    $(".hamburger, .mobile-panel").removeClass("active");
+    $("#overlay").fadeOut();
+    $("body").removeClass("overflow");
+    $.fn.fullpage.setAllowScrolling(true);
   })
 
   // Full page plugin
