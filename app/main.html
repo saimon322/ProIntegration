@@ -31,15 +31,32 @@
     <a href="/" class="header__logo">
       <img src="/img/logo.png">
     </a>
+
     <div class="header__right">
-      <nav class="header__nav">
-        <ul>
-          <li><a href="/solutions.html">Решения</a></li>
-          <li><a href="/products.html">Продукты</a></li>
-          <li><a href="/about.html">О нас</a></li>
-          <li><a href="/contacts.html">Контакты</a></li>
+      <ul class="header__nav">
+        <li><a href="/solutions.html" class="js-header-target">Решения</a></li>
+        <li><a href="/products.html" class="js-header-target">Продукты</a></li>
+        <li><a href="/about.html" class="js-header-target">О нас</a></li>
+        <li><a href="/contacts.html" class="js-header-target">Контакты</a></li>
+      </ul>
+
+      <div class="header__contacts header-contacts js-header-target">
+        <div class="header-contacts__item header-contacts__item--call">
+          <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
+        </div>
+        <div class="header-contacts__item header-contacts__item--mail">
+          <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
+        </div>
+      </div>
+
+      <div class="header__lang header-lang js-header-target">
+        <a href="#" class="header-lang__current">RU</a>
+        <ul class="header-lang__dropdown">
+          <li><a href="#">EN</a></li>
         </ul>
-      </nav>
+      </div>
+
+      <div class="js-header-line"></div>
     </div>
   </div>
 </header>
@@ -49,11 +66,49 @@
 
 <div class='main-page'>
   <section class="section first-section">
-    <picture class="section-bg">
+    <picture class="section__bg">
       <source srcset="/img/main.webp" type="image/webp">
       <source srcset="/img/main.jpg" type="image/jpeg"> 
       <img src="/img/main.jpg">
     </picture> 
+    <div class="container wow fadeIn">
+      <h1>Автоматизация с высокой точностью</h1>
+      <h2>High precision automation</h2>
+      <h3>Технологическая инжиниринговая компания с полным циклом разработки программного обеспечения</h3>
+    </div>
+    <div class="js-scroll-btn"></div>
+  </section>  
+
+  <section class="section second-section">
+    <div class="container">
+      <div class="features">
+        <div class="features__item feature">
+          <div class="feature__logo"><img src="/img/feature1.png"></div>
+          <div class="feature__title">Комплексная роботизация</div>
+          <div class="feature__text">Создание самостоятельных измерительных стендов и установок для решения уникальных задач размерного контроля</div>
+        </div>
+        <div class="features__item feature">
+          <div class="feature__logo"><img src="/img/feature2.png"></div>
+          <div class="feature__title">Автоматизация контроля качества</div>
+          <div class="feature__text">Создание самостоятельных измерительных стендов и установок для решения уникальных задач размерного контроля</div>
+        </div>
+        <div class="features__item feature">
+          <div class="feature__logo"><img src="/img/feature3.png"></div>
+          <div class="feature__title">Разработка ПО</div>
+          <div class="feature__text">Создание самостоятельных измерительных стендов и установок для решения уникальных задач размерного контроля</div>
+        </div>
+        <div class="features__item feature">
+          <div class="feature__logo"><img src="/img/feature4.png"></div>
+          <div class="feature__title">Калибровка роботов</div>
+          <div class="feature__text">Создание самостоятельных измерительных стендов и установок для решения уникальных задач размерного контроля</div>
+        </div>
+        <div class="features__item feature">
+          <div class="feature__logo"><img src="/img/feature5.png"></div>
+          <div class="feature__title">Калибровка роботов</div>
+          <div class="feature__text">Создание самостоятельных измерительных стендов и установок для решения уникальных задач размерного контроля</div>
+        </div>
+      </div>
+    </div>
   </section>  
 </div>
 

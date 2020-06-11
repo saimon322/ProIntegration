@@ -19,20 +19,37 @@ $(document).ready(function () {
 
   // Fixed scroll header
   window.addEventListener('scroll', function () {
-    if (winWidth <= 767) {
-      if (window.pageYOffset > 200) {
-        $("header").addClass("is-fixed");
-      } else {
-        $("header").removeClass("is-fixed");
-      }
+    if (window.pageYOffset > 150) {
+      $("header").addClass("is-fixed");
     } else {
-      if (window.pageYOffset > 174) {
-        $("header").addClass("is-fixed");
-      } else {
-        $("header").removeClass("is-fixed");
-      }
+      $("header").removeClass("is-fixed");
     }
   });
+
+  // Header lang
+  $(".header-lang__current").click(function(e){
+    e.preventDefault();
+    $(".header-lang").toggleClass("active");
+  })
+  $(document).mouseup(function(e) {
+    if (!$(".header-lang").is(e.target) && 
+        $(".header-lang").has(e.target).length === 0) {
+      $(".header-lang").removeClass("active");
+    }
+  })
+
+  // Header hover line
+  var headerLine = $(".js-header-line");
+  $(".js-header-target").hover(function(){
+    let paddingLeft = parseInt($(this).css("padding-left"));
+    let paddingRight = parseInt($(this).css("padding-right"));
+    let width = $(this).width() + paddingLeft + paddingRight;
+    let marginLeft = parseInt($(this).css("margin-left"));
+    let left = $(this).position().left + marginLeft;
+    headerLine.css({"width": width, "left": left, "opacity": 1})
+  }, function(){
+    headerLine.css({"opacity": 0})
+  })
 
   // Hamburger
   $(".hamburger").click(function(e){
@@ -52,6 +69,37 @@ $(document).ready(function () {
     if (!$("header").is(e.target) && $("header").has(e.target).length === 0) {
       $("header").removeClass("active");
     }
+  })
+
+  // Full page plugin
+  $('.main-page').fullpage({
+    responsive: true,
+    resize: true,
+		css3: true,
+    scrollingSpeed: 800,
+    autoScrolling: true,
+    scrollBar: false,
+    easing: 'easeInOutCubic',
+    easingcss3: 'ease',
+    setAllowScrolling: false,
+    scrollOverflow: true,
+    scrollOverflowEndPrevent: { 
+      delay: 250, 
+      reversal: false 
+    },
+    licenseKey: '28B27742-9C0644F4-853CD239-DCF3F188',
+    onLeave: function(origin, destination, direction){
+      if (destination > 1) {
+        $("header").addClass("is-fixed");
+      } else {
+        $("header").removeClass("is-fixed");
+      }
+    }
+  });
+
+  // Scroll button
+  $(".js-scroll-btn").click(function(){
+    $.fn.fullpage.moveSectionDown();
   })
 
   // Modal

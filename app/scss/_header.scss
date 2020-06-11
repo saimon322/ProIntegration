@@ -1,20 +1,266 @@
 .header {
-  padding: 36px 0;
-  position: absolute;
+  padding: 30px 0;
+  height: 110px;
+  position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
   width: 100%;
+  transition: all .7s ease;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
 
   &__logo {
     display: block;
-    width: 260px; height: 52px;
+    flex-shrink: 0;
+    width: 260px;
+    transition: all .7s ease;
+    @include media-down(xl) {
+      width: 200px;
+    }
     img {
-      width: 100%; height: 100%;
+      width: 100%; 
+      height: 100%;
     }
   }
 
-  &.is-fixed {
-    position: fixed;
-    animation: fixedHeader .7s ease;
+  &__right {
+    height: 100%;
+    position: relative;
+    display: flex;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0; 
+      bottom: -30px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: $gray;
+      transition: bottom .7s ease, opacity .7s ease;
+    }
+    &:after {
+      transform: translateX(100%);
+    }
   }
+
+  &__nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    li {
+      margin-right: 40px;
+      &:last-child {margin-right: 0;}
+      @include media-down(xl) {
+        margin-right: 20px;
+      }
+    }
+    a {
+      white-space: nowrap;
+      display: block;
+      padding: 0 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $gray;
+      transition: color .25s ease;
+      &:hover,
+      &.active {
+        color: #ffffff;
+      }
+    }
+  }
+
+  &-contacts {
+    position: relative;
+    transition: all .7s ease;
+    margin-left: 85px;
+    @include media-down(xl) {margin-left: 30px;}
+    &__item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all .7s ease;
+      &:first-child {
+        margin-bottom: 15px;
+      }
+      a {
+        padding-left: 47px;
+        color: #b9b9b9;
+        transition: all .25s ease, font-size .7s ease;
+        @include media-down(xl) {
+          padding-left: 30px;
+        }
+        &:hover {color: #ffffff;}
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0; top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 15px; height: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        pointer-events: none;
+        transition: all .7s ease;
+      }
+      &--call:before {
+        background-image: url(/img/icons/call.svg);
+      }
+      &--mail:before {
+        background-image: url(/img/icons/mail.svg);
+      }
+    }
+  }
+
+  &-lang {
+    width: 84px;
+    height: 44px;
+    position: relative;
+    z-index: 10;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 60px;
+    @include media-down(xl) {margin-left: 30px;}
+    a {
+      width: 100%;
+      height: 44px;
+      display: block;
+      padding: 14px 22px;
+      cursor: pointer;
+      position: relative;
+      &:before {
+        content: '';
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        position: absolute;
+        top: 14px;
+        right: 12px;
+        background: #fff;
+      }
+      &:hover {
+        background: $black;
+      }
+    }
+    &__current {
+      position: relative;
+      z-index: 1;
+      border: 1px solid $border;
+      border-radius: 22px;
+      transition: all .25s ease;
+      &:after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        position: absolute;
+        top: 17px;
+        right: 15px;
+        background: $green;
+      }
+    }
+    &__dropdown {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding-top: 42px;
+      background: $black1;
+      opacity: 0;
+      border: 1px solid $border;
+      border-radius: 22px;
+      overflow: hidden;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all .25s ease;
+      li:not(:last-child){
+        border-bottom: 1px solid #fff;
+      }
+    }
+    &.active  {
+      .header-lang__current {
+        border-radius: 22px 22px 0 0;
+      }
+      .header-lang__dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+      }
+    }
+  }
+
+
+  &.is-fixed {
+    height: 80px;
+    padding: 22px 0;
+    background: $black1;
+    .header {
+      &__logo {
+        width: 180px;
+      }
+      &__right:before,
+      &__right:after {
+        opacity: 0;
+        bottom: -23px;
+      }
+      &-contacts {
+        margin-left: 60px;
+        padding-left: 64px;
+        @include media-down(xl) {
+          margin-left: 40px;
+        }
+        &__item {
+          min-width: 44px;
+          height: 44px;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          &:hover {
+            background: $black;
+          }
+          a {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+            opacity: 0;
+          }
+          &:first-child {
+            margin-bottom: 0;
+            position: absolute;
+            left: 0; top: 0;
+          }
+          &:before {
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      &-lang {
+        margin-left: 20px;
+      }
+    }
+    .js-header-line  {
+      bottom: -24px;
+    }
+  }
+}
+
+.js-header-line {
+  position: absolute;
+  z-index: 1;
+  right: 0; 
+  bottom: -31px;
+  display: block;
+  width: 0;
+  height: 4px;
+  background: $green;
+  transition: all .25s ease;
 }

@@ -31,10 +31,10 @@ section {
 body {
   text-align: left;
   font-size: 16px;
-  line-height: 22px;
   font-weight: normal;
   min-width: 320px;
-  color: #000;
+  color: #fff;
+  background: $black;
   overflow-x: hidden;
   position: relative;
   font-family: $font;
@@ -63,7 +63,28 @@ a, a:focus, a:active, input, button, select, .slick-slide {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: 600;
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 56px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 45px;
+  margin-bottom: 60px;
+  color: $green;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
 }
 
 p {

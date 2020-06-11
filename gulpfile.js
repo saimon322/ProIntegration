@@ -46,6 +46,9 @@ gulp.task('styles', function () {
 gulp.task('scripts', function () {
 	return gulp.src([
 		'app/libs/jquery/jquery.min.js',
+		'app/libs/fullpage/easings.min.js',
+		'app/libs/fullpage/scrolloverflow.min.js',
+		'app/libs/fullpage/fullpage.min.js',
 		'app/libs/fancybox/fancybox.min.js',
 		'app/libs/owlcarousel/owl.carousel.min.js',
 		'app/libs/wow-js/wow.min.js',
