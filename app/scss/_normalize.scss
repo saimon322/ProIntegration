@@ -63,48 +63,56 @@ a, a:focus, a:active, input, button, select, .slick-slide {
 
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
-  font-weight: 600;
+  font-weight: 300;
+  font-style: italic;
   text-align: center;
-  @include media-down(sm) {
-    text-align: left;
+}
+
+h1, h2 {
+  font-size: 40px;
+  line-height: 45px;
+  @include media-down(lg) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+h1, h2, h3 {
+  margin-bottom: 150px;
+  @include media-down(lg) {
+    margin-bottom: 100px;
+  }
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+    bottom: -60px;
+    display: block;
+    width: 20px; height: 45px;
+    background: url(../img/icons/marker.svg) center no-repeat;
+    @include media-down(sm) {
+      bottom: -70px;
+    }
   }
 }
 
 h1 {
-  font-size: 48px;
-  line-height: 80px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-  color: #fff;
+  margin-top: 110px;
   @include media-down(lg) {
-    font-size: 30px;
-    line-height: 47px;
-  }
-  @include media-down(sm) {
-    font-size: 22px;
-    line-height: 37px;
-    margin-bottom: 30px;
-  }
-}
-
-h2 {
-  font-size: 45px;
-  margin-bottom: 50px;
-  color: $green;
-  @include media-down(lg) {
-    font-size: 26px;
-    line-height: 31px;
+    margin-top: 45px;
   }
 }
 
 h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #fff;
+  font-size: 30px;
   @include media-down(lg) {
-    font-size: 16px;
-    line-height: 35px;  }
+    font-size: 20px;
+  }
+  @include media-down(sm) {
+    font-size: 26px;
+  }
 }
 
 p {

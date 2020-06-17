@@ -10,6 +10,10 @@
 
 main {
   flex-grow: 1;
+  padding-top: 110px;
+  @include media-down(sm) {
+    padding-top: 90px;
+  }
 }
 
 a {
@@ -21,7 +25,7 @@ a {
   margin-right: auto;
   margin-left: auto;
 
-  @include media-down(xs) {padding: 0 16px;}
+  @include media-down(xs) {padding: 0 20px;}
   @include media-only(sm) {max-width: 540px;}
   @include media-only(md) {max-width: 704px;}
   @include media-only(lg) {max-width: 960px;}
@@ -39,45 +43,6 @@ a {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: none;
-}
-
-.btn {
-  cursor: pointer;
-  outline: none;
-  width: 206px; height: 48px;
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 1px;
-  position: relative;
-  transition: 300ms ease;
-  border-radius: 2px;
-  @include media-down(xl) {
-    height: 40px;
-    font-size: 12px;
-  }
-  span,
-  &:before {z-index: 1;}
-
-  &:after {
-    content: '';
-    width: 0; height: 100%;
-    position: absolute;
-    top: 0;  left: auto; right: 0;
-    transition: all 300ms ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  &:hover:after,
-  &.active:after {width: 100%; left: 0;}
 }
 
 .js-scroll-btn {
@@ -103,33 +68,181 @@ a {
   0% {transform: translateY(0);}
   5% {transform: translateY(-5px);}
   15% {transform: translateY(20px);}
-  20% {transform: translateY(0);}
+  20% {transform: translateY(5px);}
   30% {transform: translateY(15px);}
   45% {transform: translateY(0);}
   100% {transform: translateY(0);}
 }
 
-input {
-  height: 48px;
-  border: 1px solid $border;
-  padding-left: 24px; padding-right: 18px;
-  font-size: 14px; line-height: 1.29;
-  transition: border-color .2s;
-  background: transparent;
-  &::placeholder {color: #b1b1b1;}
-  @include media-down(xl) {
-    padding: 0 20px;
-    font-size: 12px; line-height: 1.5;
+.owl-carousel {
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    @include media-down(sm) {
+      top: auto;
+      bottom: -35px;
+    }
+    button {
+      opacity: 0;
+      width: 125px;
+      height: calc(40vh + 2px);
+      background: #171716;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .25s ease;
+      &:hover {opacity: 1;}
+      @include media-down(lg) {
+        width: 85px;
+        height: 362px;
+        opacity: 1;
+      }
+      @include media-down(sm) {
+        background: none;
+        width: 10px;
+        height: 40px;
+      }
+      span {font-size: 40px;}
+    }
   }
-  &:focus {border-color: $green;} 
+  .owl-prev {
+    left: 0;
+    @include media-down(sm) {left: 26px;}
+  }
+  .owl-next {
+    right: 0;
+    @include media-down(sm) {right: 26px;}
+  }
+  .owl-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8vh;
+    @include media-down(lg) {
+      bottom: -58px;
+    }
+    @include media-down(sm) {
+      bottom: -50px;
+    }
+  }
+  .owl-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #434341;
+    margin: 0 6px;
+    &.active {
+      background: $green;
+    }
+  }
+}
 
+.btn {
+  cursor: pointer;
+  outline: none;
+  width: 250px; height: 70px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transition: 300ms ease;
+  background: none;
+  user-select: none;
+  border: 0;
+  color: #000;
+  transition: color .25s;
+  @include media-down(lg) {
+    width: 200px;
+    height: 50px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    width: 100%; height: 100%;
+    transform: skew(-20deg);
+    position: absolute;
+    top: 0;  left: 0;
+    transition: all 300ms ease;
+  }
+  &:before {
+    background: $green;
+    z-index: -1;
+  }
+  &:after {
+    pointer-events: none;
+    border: 2px solid #fff;
+    z-index: -2;
+    @include media-down(lg) {
+      border: 0;
+      background: $black;
+      top: 6px !important;
+      left: 4px !important;
+    }
+  }
+
+  &:hover:after,
+  &.active:after {
+    top: 10px; left: 7px;
+  }
+
+  &.disabled {
+    color: $green;
+    cursor: default;
+    pointer-events: none;
+    &:before,
+    &:after {
+      transform: skew(-15deg);
+    }
+    &:after {
+      top: 0 !important;
+      left: 0 !important;
+    }
+  }
+}
+
+input[type="text"],
+textarea {
+  height: 52px;
+  border: 0;
+  width: 300px;
+  border-bottom: 1px solid #595959;
+  padding: 15px 18px;
+  font-size: 16px;
+  font-family: $font;
+  transition: border-color .25s;
+  background: transparent;
+  color: #fff;
+  @include media-down(lg) {
+    width: 460px;
+    padding: 15px 14px;
+  }
+  @include media-down(sm) {
+    width: 100%;
+  }
+  &::placeholder {
+    color: $gray1;
+    font-style: italic;
+  }
+  &:hover {
+    border-color: #fff;
+  } 
+  &:focus {
+    border-color: $green !important;
+  } 
+  &.error {
+    border-color: $red;
+  }
   // Safari fix
   &:-webkit-autofill,
   &:-webkit-autofill:hover, 
   &:-webkit-autofill:focus {
-    background: transparent;
-    border: 1px solid $border;
-    transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 0s 100000s;
+    -webkit-text-fill-color: #fff;
   }
   // Iphone fix
   -webkit-appearance: none;
@@ -141,14 +254,60 @@ input {
   -webkit-appearance: none;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+textarea {
+  resize: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-@keyframes fadeOut {
-  from {opacity: 1;}
-  to {opacity: 0;}
+.acceptance {
+  display: block;
+  position: relative;
+  padding-left: 54px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 17px;
+  color: #868585;
+  cursor: pointer;
+  @include media-down(lg) {
+    font-size: 12px;
+    padding-left: 60px;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  .checkmark {
+    position: absolute;
+    left: 0; top: -5px;
+    height: 24px; width: 24px;
+    border-radius: 4px;
+    border: 1px solid #fff;
+    transition: .25s ease;
+    @include media-down(lg) {
+      left: 10px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      left: 8px; top: 4px;
+      width: 7px; height: 10px;
+      border: solid $black;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: .25s;
+    }
+  }
+  input[type="checkbox"]:checked ~ .checkmark {
+    border-color: $green;
+    background-color: $green;
+    &:after {opacity: 1; }
+  }
+  input[type="checkbox"].error ~ .checkmark {
+    border-color: $red;
+  }
 }
 
 .index-page {
@@ -167,5 +326,15 @@ input {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: 600;
+  }
+}
+
+.iScrollLoneScrollbar {
+  display: none;
+}
+
+.fp-scroller {
+  @include media-up(xl) {
+    transition: .5s cubic-bezier(0.1, 0.57, 0.1, 1);
   }
 }

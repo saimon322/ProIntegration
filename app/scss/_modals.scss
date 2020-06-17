@@ -1,0 +1,58 @@
+.modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  background: #343432;
+  display: none;
+  @include media-down(sm) {
+    top: 0; left: 0;
+    width: 100%; 
+    height: 100vh;
+    height: -webkit-fill-available;
+    transform: none;
+  }
+  &-close {
+    position: absolute;
+    z-index: 2;
+    cursor: pointer;
+    top: 20px; right: 20px;
+    width: 14px; height: 14px;
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 6px; left: 1px;
+      width: 13px;
+      height: 2px;
+      background-color: #fff;
+      transition: 1s;
+    }
+    &:before {transform: rotate(-45deg);}
+    &:after {transform: rotate(45deg);}
+  }
+  &.active .modal-close {
+    &:before {transform: rotate(315deg);}
+    &:after {transform: rotate(405deg);}
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;    
+    padding: 50px 60px;
+    @include media-down(sm) {
+      padding: 45px 20px 80px;
+    }
+  }
+}
+
+.modal .contacts-block {
+  padding: 0;
+}

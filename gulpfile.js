@@ -55,6 +55,7 @@ gulp.task('scripts', function () {
 		'app/libs/mousewheel.min.js',
 		'app/libs/ie/ofi.min.js',
 
+		'app/js/forms.js',
 		'app/js/common.js', // Always at the end
 	])
 		.pipe(concat('scripts.min.js'))
@@ -84,7 +85,7 @@ gulp.task('rsync', function () {
 
 gulp.task('watch', function () {
 	gulp.watch('app/' + syntax + '/**/*.' + syntax + '', gulp.parallel('styles'));
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], gulp.parallel('scripts'));
+	gulp.watch(['libs/**/*.js', 'app/js/common.js', 'app/js/forms.js'], gulp.parallel('scripts'));
 	gulp.watch('app/*.html', gulp.parallel('code'));
 	gulp.watch('app/html/**/*.html').on('change', gulp.series('html'));
 	gulp.watch('app/blocks/**/*.html').on('change', gulp.series('html'));
