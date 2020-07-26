@@ -8,7 +8,7 @@
   width: 100%;
   transition: all .7s ease;
   @include media-down(lg) {
-    background: #2b2b29;
+    background: $black3;
   }
   @include media-down(sm) {
     padding: 23px 0;
@@ -38,14 +38,13 @@
       width: 50px;
       height: 43px;
       overflow: hidden;
-      margin-left: 6px;
     }
-    img {
+    svg {
       transition: all .7s ease;
       width: 100%;
       height: 100%;
       @include media-down(sm) {
-        width: 215px;
+        width: 200px;
       }
     }
   }
@@ -64,7 +63,7 @@
       display: block;
       width: 100%;
       height: 1px;
-      background: $gray;
+      background: $gray1;
       transition: bottom .7s ease, opacity .7s ease;
       @include media-down(lg) {display: none;}
     }
@@ -90,7 +89,7 @@
       padding: 0 11px;
       font-weight: bold;
       text-transform: uppercase;
-      color: $gray;
+      color: $gray1;
       transition: color .25s ease;
       &:hover,
       &.active {
@@ -104,7 +103,7 @@
 
   &__contacts {
     position: relative;
-    transition: all .7s ease;
+    transition: all .5s ease;
     margin-left: 85px;
     @media (max-width: 1500px) {
       margin-left: 40px;
@@ -129,7 +128,7 @@
         display: flex;
         align-items: center;
         padding-left: 47px;
-        color: $gray1;
+        color: $gray;
         transition: all .25s ease, font-size .7s ease;
         &:hover {color: #ffffff;}
         @media (max-width: 1500px) {
@@ -144,27 +143,27 @@
           padding-left: 30px;
         }
       }
-      &:before {
-        content: '';
+      svg {
         position: absolute;
         left: 0; top: 50%;
         transform: translateY(-50%);
         display: block;
         width: 15px; height: 15px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        pointer-events: none;
         transition: all .7s ease;
+        pointer-events: none;
         @include media-down(lg) {
           width: 13px; height: 13px;
         }
       }
-      &--call:before {
-        background-image: url(/img/icons/call.svg);
-      }
-      &--mail:before {
-        background-image: url(/img/icons/mail.svg);
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        opacity: 0;
       }
     }
   }
@@ -293,8 +292,8 @@
         @include media-down(sm) {
           width: 33px;
           height: 30px;
-          img {
-            width: 150px; height: 30px;
+          svg {
+            width: 140px; height: 30px;
           }
         }
       }
@@ -312,8 +311,6 @@
         &__item {
           min-width: 44px;
           height: 44px;
-          border: 1px solid #fff;
-          border-radius: 50%;
           &:hover {
             background: $black;
           }
@@ -329,9 +326,16 @@
             position: absolute;
             left: 0; top: 0;
           }
-          &:before {
+          svg {
             left: 50%;
             transform: translate(-50%, -50%);
+          }
+          &:before {
+            animation: contactsCircle .5s .2s forwards;
+          }
+          @keyframes contactsCircle {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
           }
         }
       }
@@ -364,6 +368,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   @include media-up(xl) {display: none;}
   &-box {
     width: 25px; height: 18px;
@@ -422,16 +427,19 @@
   height: calc(var(--vh, 1vh) * 100);
   width: 300px;
   background: $black2;
-  padding: 180px 30px 40px;
-  display: flex;
+  padding: 180px 40px 40px;
   flex-direction: column;
   justify-content: space-between;
   transform: translateX(300px);
   transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+  display: none;
+  @include media-down(lg) {
+    display: flex;
+  }
   @include media-down(xs) {
     width: 100vw;
     transform: translateX(100vw);
-    padding-top: 150px;
+    padding-top: 140px;
   }
   &.active {
     transform: translateX(0);
@@ -446,7 +454,7 @@
       font-size: 16px;
       font-weight: bold;
       text-transform: uppercase;
-      color: #c5c5c5;
+      color: $gray1;
     }
   }
   &__contacts {
@@ -458,5 +466,11 @@
       font-size: 16px;
       padding-left: 45px;
     }
+  }
+}
+
+.header.is-fixed ~ .mobile-panel {
+  @include media-down(xs) {
+    padding-top: 110px;
   }
 }

@@ -25,10 +25,10 @@ $(document).ready(function () {
     });
 
     if (validation) {
-      form.find(".btn").addClass("disabled");
+      form.find(".btn").addClass("sending disable");
       setTimeout(function(){
-        form.find(".btn").text("Отправлено!").css("color", "#000");
-      }, 250)
+        form.find(".btn").text("Отправлено!").removeClass("sending");
+      }, 300)
       form.find("input").each(function() {
         $(this).val("");
       });
@@ -47,11 +47,11 @@ $(document).ready(function () {
 function contactsValidate(input) {
   let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   let phoneformat = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-  if (input.is("#phone")) {
+  if (input.is(".contacts-phone")) {
     return (input.val().match(phoneformat));
-  } else if (input.is("#email")) {
+  } else if (input.is(".contacts-email")) {
     return (input.val().match(mailformat));
-  } else if (input.is("#email-phone")) {
+  } else if (input.is(".contacts-email-phone")) {
     return (input.val().match(mailformat) || input.val().match(phoneformat));
   } else {
     return true;

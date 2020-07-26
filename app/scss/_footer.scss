@@ -15,7 +15,7 @@
       display: flex;
       justify-content: space-between;
     }
-    @include media-down(xs) {
+    @include media-down(lg) {
       padding-left: 30px;
       padding-right: 23px;
     }
@@ -34,29 +34,29 @@
       width: 232px;
       margin-bottom: 50px;
     }
-    img {width: 100%;}
+    svg {width: 100%;}
   }
 
   &__content {
     display: flex;
     flex-grow: 1;
+    @include media-down(lg) {
+      justify-content: center;
+    }
   }
 
   &__nav {
-    margin-right: 120px;
+    margin-right: 130px;
     @include media-down(sm) {
       display: none;
     }
     li {
-      margin-bottom: 45px;
+      margin-bottom: 26px;
       &:last-child {margin-bottom: 0;}
-      @include media-down(lg) {
-        margin-bottom: 25px;
-      }
     }
     a {
       text-transform: uppercase;
-      color: $gray1;
+      color: $gray;
       transition: color .25s ease;
       white-space: nowrap;
       &:hover {color: #ffffff;}
@@ -70,8 +70,8 @@
   &-contacts {
     &__item {
       position: relative;
-      margin-bottom: 50px;
-      color: $gray1;
+      margin-bottom: 20px;
+      color: $gray;
       line-height: 22px;
       &:last-child {
         margin-bottom: 0;
@@ -87,38 +87,39 @@
       a {
         display: flex;
         align-items: center;
-        padding-left: 47px;
-        color: $gray1;
+        color: $gray;
         transition: color .25s ease;
+        padding-left: 47px;
         &:hover {color: #ffffff;}
         @include media-down(sm) {
           font-size: 14px;
         }
       }
-      &:before {
-        content: '';
+      svg {
         position: absolute;
-        left: 0; top: 0;
+        left: 0; top: 2px;
         display: block;
-        width: 21px; height: 21px;
         background-repeat: no-repeat;
         background-position: left center;
         pointer-events: none;
         @include media-down(sm) {
-          top: 2px;
+          top: 4px;
         }
+      }
+      &--call svg {
+        width: 17px;
+        height: 17px;
+      }
+      &--mail svg {
+        width: 18px;
+        height: 18px;
       }
       &--map {
         padding-left: 47px;
-      }
-      &--call:before {
-        background-image: url(/img/icons/call.svg);
-      }
-      &--mail:before {
-        background-image: url(/img/icons/global.svg);
-      }
-      &--map:before {
-        background-image: url(/img/icons/map.svg);
+        svg {
+          width: 21px;
+          height: 21px;
+        }
       }
     }
   }

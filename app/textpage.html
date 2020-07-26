@@ -29,7 +29,7 @@
 <header class="header">
   <div class="container header__container">
     <a href="/" class="header__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="header__right">
@@ -41,10 +41,12 @@
       </ul>
 
       <div class="header__contacts header-contacts js-header-target">
-        <div class="header-contacts__item header-contacts__item--call">
+        <div class="header-contacts__item">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
-        <div class="header-contacts__item header-contacts__item--mail">
+        <div class="header-contacts__item">
+          <img src="/img/icons/mail.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
         </div>
       </div>
@@ -76,10 +78,12 @@
     <li><a href="http://test.prointegr.com/contacts">Контакты</a></li>
   </ul>
   <div class="mobile-panel__contacts header-contacts">
-    <div class="header-contacts__item header-contacts__item--call">
+    <div class="header-contacts__item">
+      <img src="/img/icons/call.svg" class="svg" alt>
       <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
     </div>
-    <div class="header-contacts__item header-contacts__item--mail">
+    <div class="header-contacts__item">
+      <img src="/img/icons/mail.svg" class="svg" alt>
       <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
     </div>
   </div>
@@ -89,7 +93,28 @@
 
 <div class="textpage">
   <div class="container">
-    <h1>Текстовая</h1>
+    <h1>Заголовок h1</h1>
+    <h3>Заголовок h3</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure maiores aspernatur minus, ex officiis quod reiciendis, quaerat natus error commodi odio adipisci optio libero deserunt eaque. Id totam sequi consequatur!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptas reprehenderit, neque, qui, maiores magni laudantium beatae dolores assumenda laborum expedita officia iure alias consequatur nisi. At magnam molestias unde!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum beatae odit inventore laboriosam nostrum nesciunt, illo animi pariatur soluta maiores cum recusandae repellendus! Quas autem voluptate consequuntur culpa corrupti quos?</p>
+    <ul>
+      <li>Lorem</li>
+      <li>Ipsum</li>
+      <li>Dolor</li>
+      <li>Sit</li>
+      <li>Amet</li>
+    </ul>
+    <img src="/img/1.jpg" alt="">
+    <h3>Заголовок h3</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, quibusdam aliquid. Unde quisquam doloremque rem ipsum dolore eius repellendus vel nobis vero voluptates. Illo, error distinctio quaerat consequuntur maxime ullam.</p>
+    <ol>
+      <li>Lorem</li>
+      <li>Ipsum</li>
+      <li>Dolor</li>
+      <li>Sit</li>
+      <li>Amet</li>
+    </ol>
   </div>
 </div>
 
@@ -98,10 +123,10 @@
 <footer class="footer">
   <div class="container footer__container">
     <!-- <a href="/" class="footer__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a> -->
     <a href="#modal-name" class="footer__logo modal-btn">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="footer__content">
@@ -114,12 +139,15 @@
 
       <div class="footer__contacts footer-contacts">
         <div class="footer-contacts__item footer-contacts__item--call">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
         <div class="footer-contacts__item footer-contacts__item--mail">
+          <img src="/img/icons/global.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a> 
         </div>
         <div class="footer-contacts__item footer-contacts__item--map">
+          <img src="/img/icons/map.svg" class="svg" alt>
           Санкт-Петербург, Васильевский остров, Большой проспект ВО, д. 84, лит А
         </div>
       </div>
@@ -138,13 +166,13 @@
         <h3 class="contacts-block__title">Напишите нам</h3>
         <div class="contacts-block__subtitle">мы ответим на все интересуещие вас вопросы</div>
         <form class="contacts-form">
-          <input type="text" name="name" id="name" placeholder="Ваше имя">
-          <input type="text" name="phone" id="phone" placeholder="Ваш телефон">
-          <input type="text" name="email" id="email" placeholder="Ваш E-mail">
-          <textarea name="comment" id="comment" placeholder="Ваш Комментарий"></textarea>
+          <input type="text" name="name" class="form-name" placeholder="Ваше имя">
+          <input type="text" name="phone" class="form-phone" placeholder="Ваш телефон">
+          <input type="text" name="email" class="form-email" placeholder="Ваш E-mail">
+          <textarea name="comment" class="form-comment" placeholder="Ваш Комментарий"></textarea>
           <label class="acceptance">
             Даю согласие на обработку персональных данных
-            <input type="checkbox" name="acceptance" id="acceptance">
+            <input type="checkbox" name="acceptance" class="form-acceptance">
             <span class="checkmark"></span>
           </label>
           <button type="submit" class="btn">Отправить</button>

@@ -1,0 +1,17 @@
+<svg id="Группа_1" data-name="Группа 1" xmlns="http://www.w3.org/2000/svg" width="26" height="54" viewBox="0 0 26 54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #434341;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #434341;
+      }
+    </style>
+  </defs>
+  <circle id="Эллипс_3_копия_3" data-name="Эллипс 3 копия 3" class="cls-1" cx="13" cy="13" r="12"/>
+  <rect id="Прямоугольник_5_копия_3" data-name="Прямоугольник 5 копия 3" class="cls-2" x="12" y="24" width="2" height="30"/>
+</svg>

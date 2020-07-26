@@ -29,7 +29,7 @@
 <header class="header">
   <div class="container header__container">
     <a href="/" class="header__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="header__right">
@@ -41,10 +41,12 @@
       </ul>
 
       <div class="header__contacts header-contacts js-header-target">
-        <div class="header-contacts__item header-contacts__item--call">
+        <div class="header-contacts__item">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
-        <div class="header-contacts__item header-contacts__item--mail">
+        <div class="header-contacts__item">
+          <img src="/img/icons/mail.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
         </div>
       </div>
@@ -76,10 +78,12 @@
     <li><a href="http://test.prointegr.com/contacts">Контакты</a></li>
   </ul>
   <div class="mobile-panel__contacts header-contacts">
-    <div class="header-contacts__item header-contacts__item--call">
+    <div class="header-contacts__item">
+      <img src="/img/icons/call.svg" class="svg" alt>
       <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
     </div>
-    <div class="header-contacts__item header-contacts__item--mail">
+    <div class="header-contacts__item">
+      <img src="/img/icons/mail.svg" class="svg" alt>
       <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
     </div>
   </div>
@@ -90,6 +94,88 @@
 <div class="about-page">
   <div class="container">
     <h1>О нас</h1>
+    <div class="about">
+      <div class="about__header">
+        <div class="page-container">
+          <div class="about__title">Технологическая инжиниринговая компания</div>
+          <div class="about__subtitle">с полным циклом разработки программного обеспечения</div>
+          <div class="about__state-day">основана в 2018 году в Санкт-Петербурге</div>
+        </div>
+      </div>
+
+      <div class="about__features features wow fadeInUp">
+        <div class="page-container">
+          <div class="features__logo wow fadeInLeftBig">
+            <img src="/img/11.jpg" alt>
+          </div>
+          <ul class="features__list">
+            <li>Реализация уникальных проектов  для заказчиков</li>
+            <li>Разработка собственных продуктов и технологий</li>
+            <li>Выполнение сервисных работ</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Наша миссия</h3>
+      <div class="about__mission mission">
+        <div class="page-container">
+          <div class="mission__item mission-item">
+            <div class="mission-item__logo wow fadeInRightBig" data-wow-offset="200">
+              <img src="/img/4.jpg" alt="">
+            </div>
+            <div class="mission-item__content wow fadeInLeftBig" data-wow-delay=".2s">
+              <div class="mission-item__title">Помощь промышленным предприятиям</div>
+              <div class="mission-item__subtitle">адаптация производственных процессов</div>
+              <div class="mission-item__hint">на основании результатов высокоточных измерений</div>
+            </div>
+          </div>
+          <div class="mission__item mission-item">
+            <div class="mission-item__logo wow fadeInLeftBig" data-wow-offset="200">
+              <img src="/img/6.jpg" alt="">
+            </div>
+            <div class="mission-item__content wow fadeInRightBig" data-wow-delay=".2s">
+              <div class="mission-item__title">Недопущение производственного брака</div>
+              <div class="mission-item__subtitle">разработка инструментов оперативного реагирования</div>
+              <div class="mission-item__hint">для устранения и недопущения брака</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Основные компетенции</h3>
+      <div class="about__competitions competitions">
+        <div class="competition wow fadeInDown" data-wow-delay="0s">
+          <div class="competition__title">КООРДИНАТНАЯ МЕТРОЛОГИЯ</div>
+          <div class="competition__logo"><img src="/img/7.jpg" alt=""></div>
+        </div>
+        <div class="competition wow fadeInDown" data-wow-delay=".2s">
+          <div class="competition__title">разработка прикладного по</div>
+          <div class="competition__logo"><img src="/img/8.jpg" alt=""></div>
+        </div>
+        <div class="competition wow fadeInDown" data-wow-delay=".4s">
+          <div class="competition__title">автоматизация и&nbsp;робототехника</div>
+          <div class="competition__logo"><img src="/img/9.jpg" alt=""></div>
+        </div>
+        <div class="competition wow fadeInDown" data-wow-delay=".6s">
+          <div class="competition__title">машинное зрение</div>
+          <div class="competition__logo"><img src="/img/10.jpg" alt=""></div>
+        </div>
+      </div>
+
+      <div class="my-slider__wrapper">
+        <div class="my-slider my-slider3 owl-carousel wow fadeInUp">
+          <div class="my-slider__slide"><img src="/img/3.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/4.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/5.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/3.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/4.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/5.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/3.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/4.jpg" alt></div>
+          <div class="my-slider__slide"><img src="/img/5.jpg" alt></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -98,10 +184,10 @@
 <footer class="footer">
   <div class="container footer__container">
     <!-- <a href="/" class="footer__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a> -->
     <a href="#modal-name" class="footer__logo modal-btn">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="footer__content">
@@ -114,12 +200,15 @@
 
       <div class="footer__contacts footer-contacts">
         <div class="footer-contacts__item footer-contacts__item--call">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
         <div class="footer-contacts__item footer-contacts__item--mail">
+          <img src="/img/icons/global.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a> 
         </div>
         <div class="footer-contacts__item footer-contacts__item--map">
+          <img src="/img/icons/map.svg" class="svg" alt>
           Санкт-Петербург, Васильевский остров, Большой проспект ВО, д. 84, лит А
         </div>
       </div>
@@ -138,13 +227,13 @@
         <h3 class="contacts-block__title">Напишите нам</h3>
         <div class="contacts-block__subtitle">мы ответим на все интересуещие вас вопросы</div>
         <form class="contacts-form">
-          <input type="text" name="name" id="name" placeholder="Ваше имя">
-          <input type="text" name="phone" id="phone" placeholder="Ваш телефон">
-          <input type="text" name="email" id="email" placeholder="Ваш E-mail">
-          <textarea name="comment" id="comment" placeholder="Ваш Комментарий"></textarea>
+          <input type="text" name="name" class="form-name" placeholder="Ваше имя">
+          <input type="text" name="phone" class="form-phone" placeholder="Ваш телефон">
+          <input type="text" name="email" class="form-email" placeholder="Ваш E-mail">
+          <textarea name="comment" class="form-comment" placeholder="Ваш Комментарий"></textarea>
           <label class="acceptance">
             Даю согласие на обработку персональных данных
-            <input type="checkbox" name="acceptance" id="acceptance">
+            <input type="checkbox" name="acceptance" class="form-acceptance">
             <span class="checkmark"></span>
           </label>
           <button type="submit" class="btn">Отправить</button>

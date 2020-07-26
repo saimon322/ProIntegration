@@ -53,6 +53,7 @@ gulp.task('scripts', function () {
 		'app/libs/owlcarousel/owl.carousel.min.js',
 		'app/libs/wow-js/wow.min.js',
 		'app/libs/mousewheel.min.js',
+		'app/libs/TweenMax.min.js',
 		'app/libs/ie/ofi.min.js',
 
 		'app/js/forms.js',

@@ -1,386 +1,338 @@
-.section {
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  position: relative;
-  overflow: hidden;
-
-  &__bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transform: translateY(70vh) scale(1.1);
-    transition: .8s ease;
-    filter: blur(10px);
-    img {
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover;
-    }
-  }
-
-  &.active .section__bg {
-    transform: translateY(0) scale(1);
-  }
-
-  &.show .section__bg {
-    filter: none;
-  }
-
-  .container {
-    height: 100%;
+.main-page {
+  .section {
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     position: relative;
-    z-index: 1;
-  }
-}
-
-
-// Title section
-.title-section {
-  text-align: center;
-  @include media-down(sm) {
-    text-align: left;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include media-down(lg) {
-      max-width: 600px;
-    }
-    @include media-down(md) {
-      max-width: 400px;
-    }
-  }
-  .title1 {
-    font-size: 48px;
-    line-height: 80px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    color: #fff;
-    @include media-down(lg) {
-      font-size: 30px;
-      line-height: 47px;
-    }
-    @include media-down(sm) {
-      font-size: 22px;
-      line-height: 37px;
-      margin-bottom: 30px;
-    }
-  }
-  .title2 {
-    font-size: 45px;
-    margin-bottom: 50px;
-    color: $green;
-    @include media-down(lg) {
-      font-size: 26px;
-      line-height: 31px;
-    }
-  }
-  .title3 {
-    max-width: 945px;
-    font-size: 24px;
-    font-weight: 600;
-    color: #fff;
-    @include media-down(lg) {
-      font-size: 16px;
-      line-height: 35px;  
-    }
-  }
-}
-
-// Features
-.features-section.show {
-  .features__item {
-    @include media-up(xl) {
-      &:nth-child(even) {
-        animation-name: fadeInDown;
-      }
-      &:nth-child(odd) {
-        animation-name: fadeInUp;
-      }
-    }
-  }
-}
-
-.features {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include media-down(lg) {
-    flex-wrap: wrap;
-    padding-top: 100px;
-  }
-  @include media-down(sm) {
-    padding: 100px 0;
-  }
-  &__item {
-    height: 100%;
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 40px 0;
-    text-align: center;
-    position: relative;
-    @include media-up(xl) {
-      opacity: 0;
-      animation-duration: 1.5s;
-      animation-timing-function: ease;
-      animation-fill-mode: forwards;
-      animation-delay: .3s;
-    }
-    @include media-down(xl) {
-      padding: 80px 25px 0;
-    }
-    @include media-down(lg) {
-      width: 50%;
-      height: 33%;
-      padding-top: 0;
-      flex: auto;
-    }
-    @include media-down(sm) {
-      width: 100%;
-      height: auto;
-      padding: 0 5px;
-      &:not(:last-child){
-        margin-bottom: 50px;
-      }
-    }
-  }
-}
-.feature {
-  &:hover .feature__bg {
-    opacity: 1;
-  }
-  &__bg {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: .5s ease;
-    background-color: #c9a458;
-    opacity: 0;
-    @include media-down(lg) {
-      background: none !important;
-    }
-  }
-  &__logo {
-    width: 100%;
-    height: 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-    @include media-down(lg) {
-      margin-bottom: 30px;
-      height: 60px;
-    }
-  }
-  &__title {
-    max-width: 165px;
-    min-height: 105px;
-    max-height: 105px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 18px;
-    line-height: 35px;
-    transition: .5s ease;
-    @include media-down(lg) {
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 25px;
-      min-height: 0;
-    }
-  }
-  &__text {
-    font-size: 18px;
-    line-height: 31px;
-    max-height: 0;
     overflow: hidden;
-    opacity: 0;
-    margin: 0 auto;
-    margin-top: 25px;
-    transition: .5s ease;
-    @include media-down(lg) {
-      max-width: 270px;
-      font-size: 14px;
-      line-height: 25px;
-      max-height: unset;
-      height: 100px;
-      opacity: 1;
-    }
-    @include media-down(sm) {
-      height: auto;
-    }
-  }
-  &:hover {
-    .feature__title {
-      min-height: 0;
-    }
-    .feature__text {
-      max-height: 155px;
-      opacity: 1;
-    }
-  }
-}
-
-
-
-// Slider section
-.slider-section {
-  .fp-tableCell {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  h2 {
-    @include media-up(xl) {
-      display: none;
-    }
-  }
-  &.show .main-slide img {
-    animation: zoomIn 1s .2s ease forwards;
-  }
-}
-
-.main-slider {
-  @include media-up(md) {
-    height: 400px;
-  }
-  @include media-up(xl) {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 70vh;
-  }
   
-  .owl-stage-outer {
-    @include media-up(md) {
+    &__bg {
       position: absolute;
       left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform: translateY(70vh) scale(1.1);
+      transition: .8s ease;
+      filter: blur(10px);
+      img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover;
+      }
+    }
+  
+    &.active .section__bg {
+      transform: translateY(0) scale(1);
+    }
+  
+    &.show .section__bg {
+      filter: none;
+    }
+  
+    .container {
+      height: 100%;
+      position: relative;
+      z-index: 1;
     }
   }
-  .owl-stage {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.main-slide {
-  cursor: pointer;
-  margin: 0 5px;
-  transition: .7s ease;
-  filter: grayscale(1);
-  overflow: hidden;
-  @include media-up(xl) {
-    width: 56.25vw;
-    height: 40vh;
-  }
-  @include media-between(md, lg) {
-    width: 400px;
-    height: 360px;
-  }
-  @include media-down(sm) {
-    width: 100vw;
-    height: 400px;
-    max-height: calc(100vh - 300px);
-    max-height: calc(var(--vh, 1vh) * 100 - 300px);
-    filter: unset;
-  }
-  img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-  }
-}
-.owl-item.center .main-slide {
-  cursor: default;
-  filter: unset;
-  @include media-up(xl) {
-    width: 56.25vw;
-    height: 70vh;
-  }
-  @include media-between(md, lg) {
-    width: 440px;
-    height: 400px;
-  }
-}
-
-
-// Footer section
-.footer-section {
-  .fp-tableCell {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.main-contacts {
-  padding-top: 80px;
-  flex-grow: 1;
-  @include media-down(lg) {
-    padding-top: 110px;
-    padding-bottom: 50px;
-  }
-  .container {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    @include media-up(xl) {
-      max-width: 1280px;
-    }
-    @include media-down(lg) {
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-    }
-  }
-  &__title {
-    @include media-up(xl) {
+  
+  
+  // Title section
+  .title-section {
+    text-align: center;
+    @include media-down(sm) {
       text-align: left;
     }
-    margin-bottom: 40px;
-    &:after {display: none;}
-  }
-  &__subtitle {
-    color: $gray1;
-    @include media-down(lg) {
-      max-width: 240px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include media-down(lg) {
+        max-width: 600px;
+      }
+      @include media-down(md) {
+        max-width: 400px;
+      }
+      @include media-down(xs) {
+        padding: 0 40px;
+      }
+    }
+    .title1 {
+      font-size: 48px;
+      line-height: 80px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      color: #fff;
+      @include media-down(lg) {
+        font-size: 30px;
+        line-height: 47px;
+      }
+      @include media-down(sm) {
+        font-size: 22px;
+        line-height: 37px;
+        margin-bottom: 30px;
+      }
+    }
+    .title2 {
+      font-size: 45px;
+      margin-bottom: 50px;
+      color: $green;
+      @include media-down(lg) {
+        font-size: 26px;
+        line-height: 31px;
+      }
+      @include media-down(sm) {
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 40px;
+      }
+    }
+    .title3 {
+      max-width: 945px;
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      @include media-down(lg) {
+        font-size: 16px;
+        line-height: 35px;  
+      }
     }
   }
-  .contacts-form {
+  
+  // Features
+  .features-section.show {
+    .features__item {
+      @include media-up(xl) {
+        &:nth-child(even) {
+          animation-name: fadeInDown;
+        }
+        &:nth-child(odd) {
+          animation-name: fadeInUp;
+        }
+      }
+    }
+  }  
+
+  .features {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 85px;
     @include media-down(lg) {
-      flex-direction: column;
-      margin: 0;
-      margin-top: 35px;
-      width: 100%;
+      flex-wrap: wrap;
+      padding-top: 100px;
     }
-    input {
-      margin-right: 105px;
-      @include media-down(lg) {
-        margin: 0;
-        margin-bottom: 60px;
+    @include media-down(sm) {
+      padding: 100px 0;
+    }
+    &__item {
+      height: 100%;
+      flex: 1 1 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 80px 40px 0;
+      text-align: center;
+      position: relative;
+      @include media-up(xl) {
+        opacity: 0;
+        animation-duration: 1.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        animation-delay: .3s;
       }
+      @include media-down(xl) {
+        padding: 80px 25px 0;
+      }
+      @include media-down(lg) {
+        width: 50%;
+        height: 33%;
+        padding-top: 0;
+        flex: auto;
+      }
+      @include media-down(sm) {
+        width: 100%;
+        height: auto;
+        padding: 0 5px;
+        &:not(:last-child){
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+  .feature {
+    &:hover .feature__bg {
+      opacity: 1;
+    }
+    &__bg {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: .5s ease;
+      background-color: #c9a458;
+      opacity: 0;
+      @include media-down(lg) {
+        background: none !important;
+      }
+    }
+    &__logo {
+      width: 100%;
+      height: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      @include media-down(lg) {
+        margin-bottom: 30px;
+        height: 60px;
+      }
+    }
+    &__title {
+      max-width: 165px;
+      min-height: 105px;
+      max-height: 105px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 35px;
+      transition: .5s ease;
+      @include media-down(lg) {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 25px;
+        min-height: 0;
+      }
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 31px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin: 0 auto;
+      margin-top: 25px;
+      transition: .5s ease;
+      @include media-down(lg) {
+        max-width: 270px;
+        font-size: 14px;
+        line-height: 25px;
+        max-height: unset;
+        height: 100px;
+        opacity: 1;
+      }
+      @include media-down(sm) {
+        height: auto;
+      }
+    }
+    &:hover {
+      .feature__title {
+        min-height: 0;
+      }
+      .feature__text {
+        max-height: 155px;
+        opacity: 1;
+      }
+    }
+  }
+    
+  .contacts {
+    padding-top: 80px;
+    flex-grow: 1;
+    @include media-down(lg) {
+      padding-top: 110px;
+      padding-bottom: 50px;
+    }
+    &__container {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include media-up(xl) {
+        max-width: 1280px;
+      }
+      @include media-down(lg) {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+    &__title {
+      @include media-up(xl) {
+        text-align: left;
+      }
+      margin-bottom: 40px;
+      &:after {display: none;}
+    }
+    &__subtitle {
+      color: $gray;
+      @include media-down(lg) {
+        max-width: 240px;
+      }
+    }
+    .contacts-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 85px;
+      @include media-down(lg) {
+        flex-direction: column;
+        margin: 0;
+        margin-top: 35px;
+        width: 100%;
+      }
+      input {
+        margin-right: 105px;
+        @include media-down(lg) {
+          margin: 0;
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+
+  // Title section
+  .title-section {
+    .container {
+      @include media-down(xs) {
+        padding: 0 40px;
+      }
+    }
+  }
+  
+  // Slider section
+  .slider-section {
+    .fp-tableCell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      @include media-up(xl) {
+        display: none;
+      }
+    }
+    &.show .my-slider__slide img {
+      animation: zoomIn 1s .2s ease forwards;
+    }
+  }
+  
+  // Footer section
+  .footer-section {
+    .fp-tableCell {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

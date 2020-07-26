@@ -1,0 +1,269 @@
+.owl-carousel {
+  .owl-stage {
+    height: 100%;
+  }
+  .owl-stage-outer {
+    width: 100%;
+  }
+  .owl-item {
+    height: 100%;
+  }
+  .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    @include media-down(sm) {
+      top: auto;
+      bottom: -35px;
+    }
+    button {
+      opacity: 0;
+      width: 125px;
+      height: calc(40vh + 2px);
+      background: #171716;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .25s ease;
+      &:hover {opacity: 1;}
+      @include media-down(lg) {
+        width: 85px;
+        height: 362px;
+        opacity: 1;
+      }
+      @include media-down(sm) {
+        background: none;
+        width: 10px;
+        height: 40px;
+      }
+      span {font-size: 40px;}
+    }
+  }
+  .owl-prev {
+    left: 0;
+    @include media-down(sm) {left: 26px;}
+  }
+  .owl-next {
+    right: 0;
+    @include media-down(sm) {right: 26px;}
+  }
+  .owl-dots {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .owl-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #434341;
+    margin: 0 6px;
+    &.active {
+      background: $green;
+    }
+  }
+}
+
+.my-slider {
+  @include media-up(md) {
+    height: 400px;
+  }
+  @include media-up(xl) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70vh;
+  }
+  
+  .owl-stage-outer {
+    @include media-up(md) {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .owl-stage {
+    display: flex;
+    align-items: center;
+  }
+  .owl-dots {
+    bottom: -8vh;
+    @include media-down(lg) {
+      bottom: -58px;
+    }
+    @include media-down(sm) {
+      bottom: -50px;
+    }
+  }
+
+  &__slide {
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .7s ease;
+    filter: grayscale(1);
+    overflow: hidden;
+    @include media-up(xl) {
+      width: 56.25vw;
+      height: 40vh;
+    }
+    @include media-between(md, lg) {
+      width: 400px;
+      height: 360px;
+    }
+    @include media-down(sm) {
+      width: 100vw;
+      height: 400px;
+      max-height: calc(100vh - 300px);
+      max-height: calc(var(--vh, 1vh) * 100 - 300px);
+      filter: unset;
+    }
+    img {
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+    }
+  }
+  .owl-item.center .my-slider__slide {
+    cursor: default;
+    filter: unset;
+    @include media-up(xl) {
+      width: 56.25vw;
+      height: 70vh;
+    }
+    @include media-between(md, lg) {
+      width: 440px;
+      height: 400px;
+    }
+  }
+
+  &__wrapper {
+    @include media-down(lg) {
+      height: 455px;
+    }
+    @include media-down(sm) {
+      max-height: calc(100vh - 250px);
+      max-height: calc(var(--vh, 1vh) * 100 - 250px);
+    }
+  }
+}
+
+.my-slider2 {
+  .my-slider__slide {
+    filter: grayscale(1) !important;
+  }
+
+  @include media-up(xl) {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 400px;
+    padding: 0 80px;
+    margin-bottom: 100px;
+
+    .owl-stage-outer {
+      position: absolute;
+      left: 80px;
+      top: 0;
+      width: calc(100% - 160px);
+      height: 100%;
+      z-index: 1;
+      transform: none;
+    }
+
+    .owl-nav {
+      top: 0;
+      height: 100%;
+      button {
+        width: 80px;
+        height: 100%;
+        opacity: 1;
+        background: none;
+        &.owl-prev {
+          left: -80px;
+        }
+        &.owl-next {
+          right: 80px;
+        }
+        &:hover {
+          background: #171716;
+        }
+      }
+    }
+
+    .owl-dots {
+      bottom: -55px;
+    }
+
+    .my-slider__slide {
+      width: calc(100vw - 770px) !important;
+      height: 100% !important;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .my-slider__slide {
+      width: calc(100vw - 870px) !important;
+    }
+  }
+
+  @include media-down(lg) {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.my-slider3 {
+  @include media-up(xl) {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 330px;
+    padding: 0 80px;
+    margin-bottom: 180px;
+    .owl-stage-outer {
+      position: absolute;
+      left: 80px;
+      width: calc(100% - 160px);
+      z-index: 1;
+    }
+    .my-slider__slide {
+      width: 360px;
+      height: 290px;
+    }
+    .owl-item.center .my-slider__slide {
+      width: 360px;
+      height: 330px;
+    }
+    .owl-nav {
+      top: 0;
+      height: 100%;
+      button {
+        width: 80px;
+        height: 290px;
+        opacity: 1;
+        background: none;
+        &.owl-prev {
+          left: -80px;
+        }
+        &.owl-next {
+          right: 80px;
+        }
+        &:hover {
+          background: #171716;
+        }
+      }
+    }
+    .owl-dots {
+      bottom: -55px;
+    }
+  }
+  @include media-down(lg) {
+    position: absolute;
+    left: 0;
+  }
+}

@@ -29,7 +29,7 @@
 <header class="header">
   <div class="container header__container">
     <a href="/" class="header__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="header__right">
@@ -41,10 +41,12 @@
       </ul>
 
       <div class="header__contacts header-contacts js-header-target">
-        <div class="header-contacts__item header-contacts__item--call">
+        <div class="header-contacts__item">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
-        <div class="header-contacts__item header-contacts__item--mail">
+        <div class="header-contacts__item">
+          <img src="/img/icons/mail.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
         </div>
       </div>
@@ -76,10 +78,12 @@
     <li><a href="http://test.prointegr.com/contacts">Контакты</a></li>
   </ul>
   <div class="mobile-panel__contacts header-contacts">
-    <div class="header-contacts__item header-contacts__item--call">
+    <div class="header-contacts__item">
+      <img src="/img/icons/call.svg" class="svg" alt>
       <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
     </div>
-    <div class="header-contacts__item header-contacts__item--mail">
+    <div class="header-contacts__item">
+      <img src="/img/icons/mail.svg" class="svg" alt>
       <a href="mailto:company@prointegr.com" >company@prointegr.com</a>
     </div>
   </div>
@@ -95,7 +99,7 @@
       <img src="/img/main.jpg" alt>
     </picture> 
     <div class="container wow fadeInDown">
-      <h1 style="display: none">Prointegration</h1>
+      <h1 class="visually-hidden">Prointegration</h1>
       <div class="title1">Автоматизация с высокой точностью</div>
       <div class="title2">High precision automation</div>
       <div class="title3">Технологическая инжиниринговая компания с полным циклом разработки программного обеспечения</div>
@@ -104,6 +108,7 @@
   </section>  
 
   <section class="section features-section">
+    <h2 class="visually-hidden">Преимущества</h2>
     <div class="container">
       <div class="features">
         <div class="features__item feature">
@@ -142,24 +147,24 @@
 
   <section class="section slider-section fp-noscroll">
     <h2 class="marker-title">Наша галерея</h2>
-    <div class="main-slider owl-carousel">
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
-      <div class="main-slide"><img src="/img/main-slider.jpg" alt></div>
+    <div class="my-slider owl-carousel">
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
+      <div class="my-slider__slide"><img src="/img/1.jpg" alt></div>
     </div>
   </section>
 
   <section class="section footer-section">
-    <div class="main-contacts">
-      <div class="container">
-        <div class="main-contacts__block">
-          <h2 class="main-contacts__title">Напишите нам</h2>
-          <div class="main-contacts__subtitle">мы ответим на все интересуещие вас вопросы</div>
+    <div class="contacts">
+      <div class="container contacts__container">
+        <div class="contacts__block">
+          <h2 class="contacts__title">Напишите нам</h2>
+          <div class="contacts__subtitle">мы ответим на все интересуещие вас вопросы</div>
         </div>
         <form class="contacts-form">
           <input type="text" name="email" id="email-phone" placeholder="Введите вашу почту">
@@ -170,20 +175,15 @@
   </section>
 </div>
 
-<style>
-  .header {background: none;}
-  main {padding: 0;}
-</style>
-
 </main>
 
 <footer class="footer">
   <div class="container footer__container">
     <!-- <a href="/" class="footer__logo">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a> -->
     <a href="#modal-name" class="footer__logo modal-btn">
-      <img src="/img/logo.png" alt>
+      <img src="/img/icons/logo.svg" class="svg" alt>
     </a>
 
     <div class="footer__content">
@@ -196,12 +196,15 @@
 
       <div class="footer__contacts footer-contacts">
         <div class="footer-contacts__item footer-contacts__item--call">
+          <img src="/img/icons/call.svg" class="svg" alt>
           <a href="tel:+78127029298">+ 7 (812) 702 - 92 - 98</a>  
         </div>
         <div class="footer-contacts__item footer-contacts__item--mail">
+          <img src="/img/icons/global.svg" class="svg" alt>
           <a href="mailto:company@prointegr.com" >company@prointegr.com</a> 
         </div>
         <div class="footer-contacts__item footer-contacts__item--map">
+          <img src="/img/icons/map.svg" class="svg" alt>
           Санкт-Петербург, Васильевский остров, Большой проспект ВО, д. 84, лит А
         </div>
       </div>
@@ -220,13 +223,13 @@
         <h3 class="contacts-block__title">Напишите нам</h3>
         <div class="contacts-block__subtitle">мы ответим на все интересуещие вас вопросы</div>
         <form class="contacts-form">
-          <input type="text" name="name" id="name" placeholder="Ваше имя">
-          <input type="text" name="phone" id="phone" placeholder="Ваш телефон">
-          <input type="text" name="email" id="email" placeholder="Ваш E-mail">
-          <textarea name="comment" id="comment" placeholder="Ваш Комментарий"></textarea>
+          <input type="text" name="name" class="form-name" placeholder="Ваше имя">
+          <input type="text" name="phone" class="form-phone" placeholder="Ваш телефон">
+          <input type="text" name="email" class="form-email" placeholder="Ваш E-mail">
+          <textarea name="comment" class="form-comment" placeholder="Ваш Комментарий"></textarea>
           <label class="acceptance">
             Даю согласие на обработку персональных данных
-            <input type="checkbox" name="acceptance" id="acceptance">
+            <input type="checkbox" name="acceptance" class="form-acceptance">
             <span class="checkmark"></span>
           </label>
           <button type="submit" class="btn">Отправить</button>

@@ -1,4 +1,306 @@
-.textpage {
-  
+.about {
+  margin-bottom: 100px;
+
+  h3 {
+    margin-bottom: 70px;
+    @include media-down(sm) {
+      text-align: center;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 70px;
+    @include media-down(sm) {
+      text-align: left;
+    }
+    @include media-down(xs) {
+      padding: 0 10px;
+    }
+  }
+  &__title {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    @include media-down(md) {
+      font-size: 18px;
+    }
+  }
+  &__subtitle {
+    color: $gray;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    @include media-down(md) {
+      font-size: 16px;
+    }
+  }
+  &__state-day {
+    color: $gray;
+    font-weight: 300;
+    @include media-down(md) {
+      font-size: 14px;
+    }
+  }
+
+  &__features {
+    margin-bottom: 110px;
+    position: relative;
+  }
+  .features {
+    &__logo {
+      width: 620px;
+      height: 370px;
+      img {width: 100%; height: 100%; object-fit: cover}
+      @include media-down(md) {
+        width: 65vw;
+        height: 375px;
+        margin-left: calc((700px - 100vw) / 2);
+      }
+      @include media-down(sm) {
+        margin-left: -20px;
+      }
+    }
+    &__list {
+      position: absolute;
+      left: 420px;
+      top: 50%;
+      margin-top: 0;
+      transform: translateY(-50%);
+      @include media-down(lg) {
+        left: 200px;
+      }
+      @include media-down(md) {
+        left: 50px;
+      }
+      @include media-down(sm) {
+        left: 0;
+      }
+      li {
+        padding-left: 62px;
+        font-size: 22px;
+        text-transform: uppercase;
+        &:not(:last-child){
+          margin-bottom: 60px;
+        }
+        @include media-down(md) {
+          padding-left: 73px;
+          font-size: 16px;
+        }
+        @include media-down(sm) {
+          font-size: 14px;
+          line-height: 27px;
+        }
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0; top: 50%;
+          transform: translateY(-50%);
+          display: block;
+          width: 32px; height: 32px;
+          background: url(../img/icons/list.svg) center no-repeat;
+          @include media-down(md) {
+            width: 20px; height: 24px;
+            background-image: url(../img/icons/list-mobile.svg);
+          }
+        }
+      }
+    }
+  }
+
+  &__mission {
+    margin-bottom: 110px;
+  }
+  .mission {
+    &-item {
+      display: flex;
+      align-items: center;
+      &:not(:last-child){
+        margin-bottom: 50px;
+      }
+      @include media-down(md) {
+        flex-direction: column;
+      }
+
+      &__logo {
+        flex: 1 1 0;
+        height: 450px;
+        position: relative;
+        @include media-down(lg) {
+          height: 350px;
+        }
+        @include media-down(md) {
+          width: 100vw;
+          height: 450px;
+          flex: auto;
+          order: 1;
+          margin: 80px 0 0;
+        }
+        @include media-down(sm) {
+          height: 350px;
+        }
+        img {
+          width: calc(50vw - 140px);
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          filter: grayscale(1);
+          top: 0;
+          @include media-down(lg) {
+            width: 100%;
+          }
+        }
+      }
+
+      @include media-up(lg) {
+        &:nth-child(odd) .mission-item__logo {
+          order: 1;
+          margin-left: 73px;
+          img {left: 0;}
+        }
+        &:nth-child(even) .mission-item__logo {
+          margin-right: 73px;
+          img {right: 0;}
+        }
+      }
+      
+      &__content {
+        flex: 1 1 0;
+        position: relative;
+        padding-left: 48px;
+        @include media-down(md) {
+          width: 100%;
+        }
+        @include media-down(sm) {
+          padding-left: 30px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0; top: 0;
+          display: block;
+          width: 4px; height: 100%;
+          background: $green;
+        }
+      }
+      
+      &:nth-child(even) .mission-item__content {
+        @include media-down(md) {
+          padding-left: 0;
+          padding-right: 48px;
+          text-align: right;
+          @include media-down(sm) {
+            padding-right: 30px;
+          }
+          &:before {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+      &__title {
+        font-size: 22px;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        @include media-down(sm) {
+          font-size: 16px;
+          line-height: 31px;
+          margin-bottom: 35px;
+        }
+      }
+      &__subtitle {
+        font-size: 20px;
+        margin-bottom: 25px;
+        @include media-down(sm) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+      &__hint {
+        font-size: 18px;
+        color: $gray;
+        font-style: italic;
+        @include media-down(sm) {
+          font-size: 14px;
+          line-height: 23px;
+        }
+      }
+    }
+  }
+
+  &__competitions {
+    margin-bottom: 145px;
+    display: flex;
+    flex-wrap: wrap;
+    @include media-down(md) {
+      display: block;
+    }
+  }
+  .competition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1 1 0;
+    flex-shrink: 0;
+    padding: 20px;
+    height: 340px;
+    @include media-down(lg) {
+      width: 50%;
+      height: 300px;
+      flex: auto;
+    }
+    @include media-down(md) {
+      width: 100%;
+      height: 80px;
+      justify-content: flex-start;
+      padding: 0;
+      &:first-child {
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          left: -25vw; top: 0;
+          display: block;
+          width: 150vw; height: 100%;
+          background: #c9a458;
+        }
+      }
+    }
+    &:hover {
+      z-index: 1;
+      .competition__logo {
+        transform: scale(1.1);
+      }
+    }
+    &__logo {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      transition: .5s ease;
+      img {width: 100%; height: 100%; object-fit: cover}
+      @include media-down(md) {
+        display: none;
+      }
+    }
+    &__title {
+      font-size: 22px;
+      line-height: 31px;
+      text-transform: uppercase;
+      max-width: 225px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      @include media-down(md) {
+        font-size: 18px;
+        text-align: left;
+        max-width: 100%;
+      }
+      @include media-down(sm) {
+        font-size: 16px;
+      }
+    }
+  }
 }
 

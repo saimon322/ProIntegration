@@ -13,8 +13,10 @@
 @import "header";
 @import "footer";
 
-// Modals
-@import "modals";
+// Blocks
+@import "blocks/modals";
+@import "blocks/my-slider";
+@import "blocks/contacts-form";
 
 // Pages
 @import "pages/main";

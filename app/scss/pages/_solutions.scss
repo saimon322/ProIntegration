@@ -1,4 +1,212 @@
-.project {
-  
+.solutions {
+  margin-bottom: 100px;
+  @include media-up(xl) {
+    display: flex;
+  }
+
+  &__nav {
+    width: 450px;
+    flex-shrink: 0;
+    @media (max-width: 1500px) {
+      width: 370px;
+    }
+    @include media-down(lg) {
+      width: 100%;
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    padding: 70px 90px 30px 30px;
+    background: $black3;
+    @media (max-width: 1500px) {
+      padding: 70px 50px 30px;
+    }
+    @include media-down(lg) {
+      padding: 60px 30px 20px;
+      background: unset;
+    }
+    @include media-down(sm) {
+      padding-bottom: 0;
+    }
+  }
+
+  &-nav {
+    &__list {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item {
+      position: relative;
+      &.active {
+        @include media-down(lg) {
+          order: -1;
+          &:before {
+            content: '›';
+            font-size: 40px;
+            position: absolute;
+            z-index: 1;
+            right: 30px;
+            top: 13px;
+            transition: .25s ease;
+          }
+        }
+        @include media-down(xs) {
+          &:before {
+            right: 20px;
+            top: 23px;
+          }
+        }
+        .solutions-nav__toggler {
+          background: $black3;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 600;
+          display: flex;
+          svg {
+            fill: $green;
+          }
+          @include media-down(lg) {
+            font-size: 16px;
+            height: 80px !important;
+          }
+          @include media-down(xs) {
+            font-size: 14px;
+            height: 100px !important;
+          }
+        }
+      }
+      &.show {
+        @include media-down(lg) {
+          &:before {
+            top: 15px;
+            transform: rotate(90deg);
+          }
+        }
+        @include media-down(xs) {
+          &:before {
+            top: 29px;
+          }
+        }
+        .solutions-nav__toggler {
+          @include media-down(lg) {
+            height: 80px;
+          }
+          @include media-down(xs) {
+            height: 100px;
+          }
+        }
+      }
+    }
+    &__toggler {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 110px;
+      color: #8e8e8e;
+      padding-left: 96px;
+      padding-right: 30px;
+      position: relative;
+      font-size: 16px;
+      line-height: 31px;
+      @include media-down(lg) {
+        height: 0;
+        overflow: hidden;
+        transition: height .5s ease;
+        background: $black3;
+        font-size: 14px;
+        line-height: 25px;
+        padding-left: 124px;
+        padding-right: 50px;
+      }
+      @include media-down(sm) {
+        padding-left: 82px;
+        padding-right: 40px;
+      }
+      svg {
+        width: 35px;
+        height: 35px;
+        fill: #6e6e6e;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:hover {
+        background: $black3;
+      }
+    }
+    &__sublist {
+      display: none;
+      padding: 20px 0;
+      background: #20201e;
+    }
+    &__link {
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      color: #8e8e8e;
+      font-size: 16px;
+      line-height: 23px;
+      @include media-down(lg) {
+        padding-left: 124px;
+      }
+      @include media-down(sm) {
+        padding: 20px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0; top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 4px;
+        background: $green;
+        opacity: 0;
+        height: 0;
+        transition: .25s ease;
+        @include media-down(lg) {
+          display: none;
+        }
+      }
+      &:hover {
+        color: #ffffff;
+      }
+      &.active {
+        color: #ffffff;
+        &:before {
+          height: 60px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: none;
+    width: 100%;
+    &.active {
+      display: block;
+    }
+  }
 }
 
+.solution {
+  &__title {
+    font-size: 22px;
+    margin-bottom: 55px;
+    text-transform: uppercase;
+    @include media-down(lg) {
+      margin-bottom: 35px;
+    }
+  }
+  &__text {
+    color: #b9b9b9;
+    font-weight: 300;
+    margin-bottom: 50px;
+    p {
+      line-height: 31px;
+      margin-bottom: 30px;
+    }
+  }
+}
